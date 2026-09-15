@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="YuanfengOu 的个人主页：税务学习者，正在探索人工智能与数据分析。" />
+    <title>YuanfengOu · 税务与数据</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d1b2a'/%3E%3Cpath d='M18 18h28v8H18zm5 13h18v8H23zm-5 13h28v8H18z' fill='%23f6b73c'/%3E%3C/svg%3E" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+      :root {
+        --ink: #eaf2fb;
+        --muted: #9db0c3;
+        --navy: #0d1b2a;
+        --blue: #132b42;
+        --line: rgba(234, 242, 251, .16);
+        --gold: #f6b73c;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--navy);
+        color: var(--ink);
+        font-family: "Noto Sans SC", system-ui, sans-serif;
+        line-height: 1.6;
+      }
+
+      .wrap {
+        width: min(1120px, calc(100% - 40px));
+        margin: auto;
+      }
+
+      .nav {
+        height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        font: 500 1rem "DM Mono", monospace;
+        letter-spacing: .06em;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: .9rem;
+      }
+
+      .hero {
+        min-height: 610px;
+        display: grid;
+        grid-template-columns: 1.35fr .65fr;
+        gap: 4rem;
+        align-items: center;
+        padding: 6.5rem 0 5.5rem;
+      }
+
+      .eyebrow {
+        color: var(--gold);
+        font: 500 .78rem "DM Mono", monospace;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.4rem, 8vw, 7rem);
+        line-height: .98;
+        letter-spacing: -.065em;
+        margin: .75rem 0 1.7rem;
+      }
+
+      .hero h1 span { color: var(--gold); }
+
+      .intro {
+        font-size: 1.12rem;
+        color: var(--muted);
+        max-width: 34rem;
+        margin: 0 0 2rem;
+      }
+
+      .contact {
+        display: inline-flex;
+        align-items: center;
+        gap: .65rem;
+        background: var(--gold);
+        color: #17212c;
+        padding: .8rem 1.1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font: 500 .9rem "DM Mono", monospace;
+      }
+
+      .contact:hover { filter: brightness(1.08); }
+
+      .mark {
+        position: relative;
+        height: 330px;
+        display: grid;
+        place-items: center;
+      }
+
+      .ring {
+        position: absolute;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+      }
+
+      .ring:nth-child(1) { width: 310px; height: 310px; }
+      .ring:nth-child(2) { width: 220px; height: 220px; border-color: rgba(246, 183, 60, .45); }
+      .ring:nth-child(3) { width: 130px; height: 130px; }
+
+      .monogram {
+        font: 600 4rem "DM Mono", monospace;
+        color: var(--gold);
+        z-index: 1;
+      }
+
+      .dot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: var(--gold);
+        border-radius: 50%;
+        top: 15px;
+        right: 46px;
+      }
+
+      .section {
+        padding: 5rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-head {
+        display: flex;
+        gap: 1.4rem;
+        align-items: baseline;
+        margin-bottom: 2.5rem;
+      }
+
+      .number {
+        color: var(--gold);
+        font: 500 .8rem "DM Mono", monospace;
+      }
+
+      .section h2 {
+        font-size: 1.75rem;
+        margin: 0;
+        letter-spacing: -.03em;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .about-grid p {
+        font-size: 1.15rem;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .focus-list {
+        border-left: 1px solid var(--line);
+        padding-left: 1.5rem;
+      }
+
+      .focus-list div {
+        padding: .48rem 0;
+        font-size: 1rem;
+      }
+
+      .focus-list b {
+        font-family: "DM Mono", monospace;
+        color: var(--gold);
+        font-size: .8rem;
+        margin-right: .8rem;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .project {
+        background: var(--blue);
+        padding: 1.65rem;
+        border: 1px solid transparent;
+        min-height: 230px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: .2s;
+      }
+
+      .project:hover {
+        border-color: var(--gold);
+        transform: translateY(-3px);
+      }
+
+      .project-label {
+        font: 500 .72rem "DM Mono", monospace;
+        color: var(--gold);
+        letter-spacing: .08em;
+      }
+
+      .project h3 {
+        font-size: 1.25rem;
+        line-height: 1.35;
+        margin: 1.4rem 0 0;
+      }
+
+      .project p {
+        color: var(--muted);
+        font-size: .92rem;
+        margin: 0;
+      }
+
+      footer {
+        padding: 2.5rem 0 3.5rem;
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font: 400 .78rem "DM Mono", monospace;
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 720px) {
+        .wrap { width: min(100% - 32px, 1120px); }
+        .hero { grid-template-columns: 1fr; padding: 4.5rem 0 3rem; gap: 1.5rem; }
+        .mark { height: 230px; order: -1; }
+        .ring:nth-child(1) { width: 220px; height: 220px; }
+        .ring:nth-child(2) { width: 155px; height: 155px; }
+        .ring:nth-child(3) { width: 90px; height: 90px; }
+        .hero h1 { font-size: 3.8rem; }
+        .about-grid, .projects { grid-template-columns: 1fr; gap: 1rem; }
+        .section { padding: 3.5rem 0; }
+        .project { min-height: 185px; }
+        footer { gap: 1rem; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="nav" aria-label="主导航">
+        <div class="brand">YF / OU</div>
+        <a href="mailto:2825594368@qq.com">联系我 ↗</a>
+      </nav>
+
+      <main>
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Taxation · AI · Data</div>
+            <h1>Yuanfeng<span>Ou</span></h1>
+            <p class="intro">税务专业学习者，正以人工智能与数据分析为新的坐标，探索智慧税务的实践边界。</p>
+            <a class="contact" href="mailto:2825594368@qq.com">2825594368@qq.com ↗</a>
+          </div>
+
+          <div class="mark" aria-hidden="true">
+            <i class="ring"></i><i class="ring"></i><i class="ring"></i>
+            <span class="monogram">YO</span><i class="dot"></i>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head"><span class="number">01</span><h2>关于我</h2></div>
+          <div class="about-grid">
+            <p>我的专业基础来自税务，也持续关注技术如何让税收管理更精准、更高效、更具洞察力。</p>
+            <div class="focus-list">
+              <div><b>NOW</b>人工智能与数据分析</div>
+              <div><b>FIELD</b>税务管理与国际税收</div>
+              <div><b>GOAL</b>面向未来的智慧税务实践</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head"><span class="number">02</span><h2>课程项目</h2></div>
+          <div class="projects">
+            <article class="project">
+              <div class="project-label">PROJECT / 01</div>
+              <h3>企业生命周期税务管理实务</h3>
+              <p>从企业发展阶段理解税务管理的动态决策。</p>
+            </article>
+            <article class="project">
+              <div class="project-label">PROJECT / 02</div>
+              <h3>国际税收专题</h3>
+              <p>关注跨境经营情境下的税收规则与协同。</p>
+            </article>
+            <article class="project">
+              <div class="project-label">PROJECT / 03</div>
+              <h3>智慧税务</h3>
+              <p>探索数字化与智能化技术在税务领域的应用。</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 YuanfengOu</span>
+        <span>Taxation / AI / Data</span>
+      </footer>
+    </div>
+  </body>
+</html>
